@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import burgeyH from './assets/burgerwithhands.png'
 
-function About() {
+function Experience() {
     const sectionRef = useRef(null)
     const [inView, setInView] = useState(false)
     const leftEyeRef = useRef(null)
@@ -24,7 +24,7 @@ function About() {
     }, [])
 
     useEffect(() => {
-        const maxDist = 8 // how far the pupil can travel, in px
+        const maxDist = 8
 
         const getPupilOffset = (eyeEl, mouseX, mouseY) => {
             const rect = eyeEl.getBoundingClientRect()
@@ -53,7 +53,6 @@ function About() {
         return () => window.removeEventListener('mousemove', handleMouseMove)
     }, [])
 
-    function Feel(){
     return (
         <div className={`about ${inView ? 'in-view' : ''}`} ref={sectionRef} id='about'>
             <div className="about-wave"></div>
@@ -85,7 +84,6 @@ function About() {
                 </div>
             </div>
 
-            {/* Bottom Corner Overlay Text */}
             <div className="about-footer-text left">
                 <span>450 KCAL</span>
                 <span>HIGH PROTEIN</span>
@@ -97,7 +95,7 @@ function About() {
                 <span>TRUE TASTE</span>
             </div>
         </div>
-    )}
+    )
 }
 
-export default About
+export default Experience
